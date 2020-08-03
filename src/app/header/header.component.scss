@@ -1,0 +1,47 @@
+.sidebar {
+  .user-name {
+    border-bottom: 1px solid black;
+    h3 {
+      color:#4a4a4a;
+      margin: 1rem 0;
+    }
+  }
+  .addMovie {
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 18px;
+    color:#4a4a4a;
+    padding: 1rem;
+    width: 100%;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background-color: rgba(53, 211, 211, 0.507);
+    }
+  }
+  .list {
+    li{
+      border-bottom: 1px solid black;
+      padding: 1rem;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+      a {
+        color:#4a4a4a;
+        font-size: 18px;
+      }
+  
+      &:last-child {
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.212);
+        }
+      }
+      &:hover {
+        background-color: #eee;
+      }
+    }
+  }
+}

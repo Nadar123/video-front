@@ -1,0 +1,91 @@
+<mat-card>
+  <h3>Add a movie with all fields information </h3>
+  <form (submit)="onAddPost(postForm)" action="" #postForm="ngForm">
+    <mat-form-field>
+      <mat-label> Movie Title </mat-label>
+      <input 
+        matInput 
+        type="text" 
+        name="title"
+        ngModel
+        #title="ngModel"
+        required
+        minlength="3"
+        maxlength="30"  
+      />
+      <mat-error *ngIf="title.invalid">
+        Please enter a post title
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Image </mat-label>
+      <input 
+        matInput 
+        type="text" 
+        name="img"
+        ngModel
+        #img="ngModel"
+        required
+        maxlength="100"  
+      />
+      <mat-error *ngIf="title.invalid">
+        Please enter an image
+      </mat-error>
+
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label> Catgorey </mat-label>
+      <mat-select 
+      name="content"
+      ngModel
+      #content="ngModel"
+      required
+      minlength="3"
+      maxlength="30"
+      >
+        <mat-option 
+        *ngFor="let catagory of Catagories" 
+        [value]="catagory.value"> {{catagory.viewValue}}</mat-option>
+     
+      </mat-select>
+      <mat-error *ngIf="content.invalid">
+        Please enter a post content
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label> IMDB Link</mat-label>
+      <input 
+        matInput
+        name="imdb"
+        ngModel
+        #imdb="ngModel"
+        required
+        minlength="3"
+        maxlength="30"  
+      > 
+      <mat-error *ngIf="content.invalid">
+        Please enter a imdb link
+      </mat-error>
+
+    </mat-form-field>
+
+    <mat-dialog-actions>
+      <button 
+        color="accent" 
+        mat-raised-button 
+        type="submit"
+      > save post </button>
+      <button  
+        mat-raised-button  
+        mat-button  
+        color="primary" 
+        (click)="close()" > Close
+    </button>
+    </mat-dialog-actions>
+    
+
+  </form>
+  </mat-card>
+

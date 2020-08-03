@@ -1,0 +1,49 @@
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem 0;
+
+  mat-card {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &.card-box {
+      max-width: 330px;
+
+      .delete-icon {
+        position: absolute;
+        top: 6px;
+        left: 10px;
+        margin: auto;
+        cursor: pointer;
+        font-size: 18px;
+        transition: color 0.2s ease-in-out;
+    
+        &:hover {
+          color: red
+        }
+      }
+    }
+    img {
+      width: 40%;
+      margin: 1rem;
+    }
+    mat-card-title {
+      padding-top: 2rem;
+    }
+    &:hover {
+      background-color: rgba(209, 241, 230, 0.507);
+    }
+  }
+}
+.info-text {
+  text-align: center;
+}
+.mat-expansion-panel {
+  margin-bottom: 0.5rem;
+}

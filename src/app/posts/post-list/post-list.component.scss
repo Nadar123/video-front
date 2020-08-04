@@ -14,6 +14,8 @@
 
     &.card-box {
       max-width: 330px;
+      // min-height: 175px;
+      // height: 175px;
 
       .delete-icon {
         position: absolute;
@@ -35,10 +37,36 @@
     img {
       width: 40%;
       margin: 1rem;
+      min-height: 100px;
+    }
+    mat-card-header {
+      width: 100%;
+
+      mat-card-subtitle {
+        font-weight: 500;
+        color: rgba(0,0,0, 0.7);
+        p{
+          margin: 10px 0 0 0;
+          font-weight: 400;
+          color: gray;
+        }
+      }
+
     }
     mat-card-title {
+      display: flex;
+      align-items: baseline;
       padding-top: 2rem;
+      color: rgba(0,0,0, 0.7);
+      
+      p {
+        font-size: 18px;
+        font-weight: 400;
+        color: gray;
+        padding-right: 5px;
+      }
     }
+  
     &:hover {
       background-color: rgba(209, 241, 230, 0.507);
       .delete-icon {
@@ -52,4 +80,8 @@
 }
 .mat-expansion-panel {
   margin-bottom: 0.5rem;
+}
+
+mat-spinner {
+  margin: auto;
 }

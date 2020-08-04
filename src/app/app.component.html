@@ -1,18 +1,14 @@
-<!-- 
-  <main>
-  </main>  -->
-  <main class="main">
-    <div class="columns">
-      <div class="column is-9">
-        <app-post-create></app-post-create>
-        <app-post-list></app-post-list>
-      </div>
-        <div class="column is-3 left-border">
-          <app-header></app-header>
-      </div>
+
+<main class="main">
+  <div class="columns">
+    <div class="column is-9">
+      <router-outlet></router-outlet>
     </div>
-  </main>
+      <div class="column is-3 left-border">
+        <app-header></app-header>
+    </div>
+  </div>
+</main>
 
 
 
-<router-outlet></router-outlet>

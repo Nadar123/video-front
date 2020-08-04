@@ -13,8 +13,10 @@ interface Catagory{
   styleUrls: ['./post-create.component.scss']
 })
 export class PostCreateComponent implements OnInit {
-  
-  constructor( public postsService: PostsService, public dialog: MatDialog ) { }
+  isLoading = false;
+  constructor( 
+    public postsService: PostsService, 
+    public dialog: MatDialog ) { }
 
   Catagories: Catagory[] = [
     {value: 'Drama', viewValue: 'Drama'},
@@ -26,6 +28,7 @@ export class PostCreateComponent implements OnInit {
   ngOnInit(): void {}
 
   onAddPost(form: NgForm) {
+    this.isLoading = true;
     if(form.invalid) {
       return;
     }
@@ -38,7 +41,6 @@ export class PostCreateComponent implements OnInit {
       );
     form.resetForm();
     this.dialog.closeAll();
-
   }
 
   close() {

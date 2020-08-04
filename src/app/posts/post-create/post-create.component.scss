@@ -1,4 +1,7 @@
 mat-card {
+  mat-spinner {
+    margin: auto;
+  }
   margin-bottom: 2rem;
   padding: 1rem 3rem;
 
@@ -8,5 +11,10 @@ mat-card {
     textarea {
       width: 100%;
     }
+  }
+  mat-dialog-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
   }
 }

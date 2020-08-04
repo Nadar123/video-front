@@ -48,8 +48,8 @@
       maxlength="30"
       >
         <mat-option 
-        *ngFor="let catagory of Catagories" 
-        [value]="catagory.value"> {{catagory.viewValue}}</mat-option>
+        *ngFor="let cat of categories.category" 
+        [value]="cat.category"> {{cat.category}}</mat-option>
      
       </mat-select>
       <mat-error *ngIf="category.invalid">

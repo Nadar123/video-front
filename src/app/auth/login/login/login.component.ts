@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       return
     }
     this.authService.login(form.value.email, form.value.password);
-    // this.router.navigate(['/secure'])
+    this.router.navigate(['/secure'])
   }
   
 }

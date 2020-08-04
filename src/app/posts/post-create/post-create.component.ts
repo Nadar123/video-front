@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {PostsService} from '../posts.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {CatagoriesService} from '../catagories.service';
+// import {Catagory} from '../catagory.model'
 
-interface Catagory{
-  value: string;
-  viewValue: string;
-}
 @Component({
   selector: 'app-post-create',
   templateUrl: './post-create.component.html',
@@ -16,16 +14,33 @@ export class PostCreateComponent implements OnInit {
   isLoading = false;
   constructor( 
     public postsService: PostsService, 
-    public dialog: MatDialog ) { }
+    public dialog: MatDialog,
+    public catagoriesService: CatagoriesService ) { }
+    public categories: any;
 
-  Catagories: Catagory[] = [
-    {value: 'Drama', viewValue: 'Drama'},
-    {value: 'Comedy', viewValue: 'Comedy'},
-    {value: 'Action', viewValue: 'Action'},
-    {value: 'Herror', viewValue: 'Herror'},
-    {value: 'Oscar winners', viewValue: 'Oscar winners'}
-  ];
-  ngOnInit(): void {}
+
+  ngOnInit(): void {
+    this.isLoading = true;
+    this.catagoriesService.getCatagories().subscribe(res => {
+      this.categories = res;
+      this.isLoading = false;
+      debugger;
+    })
+  }
+
+  // ngOnInit(): void {
+  //   this.isLoading = true;
+  //   this.postsService.getPosts();
+  //   this.postSubscription = this.postsService.getPostUpdateListener()
+  //     .subscribe((posts: Post[]) => {
+  //       this.isLoading = false;
+  //       this.posts = posts;
+  //     });
+  // }
+  // .subscribe((posts: Post[]) => {
+  //   this.isLoading = false;
+  //   this.posts = posts;
+  // });
 
   onAddPost(form: NgForm) {
     this.isLoading = true;

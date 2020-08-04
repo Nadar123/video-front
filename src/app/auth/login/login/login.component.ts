@@ -19,12 +19,7 @@ export class LoginComponent implements OnInit {
 
   onLogin(form: NgForm) {
     console.log(form.value);
-
-    this.router.navigate(['/secure'])
-
+    // this.router.navigate(['/secure'])
   }
-
-  loginCheck() {
-   this.isLogIn.emit(true); 
-  }
+  
 }

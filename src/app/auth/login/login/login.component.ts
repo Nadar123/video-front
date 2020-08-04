@@ -1,6 +1,8 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {Router} from '@angular/router';
+import {AuthService} from '../../auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -12,13 +14,18 @@ export class LoginComponent implements OnInit {
 
   isLoading = false;
 
-  constructor(public router: Router ) { }
+  constructor(
+    public router: Router, 
+    public authService:AuthService ) { }
 
   ngOnInit(): void {
   }
 
   onLogin(form: NgForm) {
-    console.log(form.value);
+    if(form.invalid) {
+      return
+    }
+    this.authService.login(form.value.email, form.value.password);
     // this.router.navigate(['/secure'])
   }
   

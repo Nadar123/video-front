@@ -10,7 +10,7 @@ import { HeaderComponent} from './header/header.component';
 import {PostsService} from './posts/posts.service';
 import { LoginComponent } from './auth/login/login/login.component';
 import { SignupComponent } from './auth/signup/signup/signup.component';
-import {AuthInterceptor} from './auth/auth-interceptor';
+// import {AuthInterceptor} from './auth/auth-interceptor';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
@@ -56,7 +56,7 @@ import { DistinctPipe } from './header/distinct.pipe';
     MatProgressSpinnerModule
   ],
   providers: [
-    {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true},
+    // {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true},
     PostsService
   ],
   bootstrap: [AppComponent]

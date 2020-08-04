@@ -8,7 +8,6 @@
     <li *ngFor="let post of posts | distinct">
       {{ post.category }}
     </li>
-    <li><a hrouter-link="">Logout</a></li>
-    <!-- <button class="addMovie logout" (click)="openDialog()">add movie</button> -->
+    <li><a router-link="login" (click)="onLogout()">Logout</a></li>
   </ul>
 </div>

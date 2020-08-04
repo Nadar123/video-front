@@ -5,7 +5,7 @@
     <img mat-card-image src="{{ post.img }}" alt="some image">
     <mat-card-header>
       <span></span>
-      <mat-card-title> <p>  Title: </p> {{ post.title }} </mat-card-title>
+      <mat-card-title> {{ post.title }} </mat-card-title>
       <mat-card-subtitle> <p>category: </p> {{ post.category }}</mat-card-subtitle>
     </mat-card-header>
     <span class="delete-icon" (click)="onDelete(post.id)">x</span>

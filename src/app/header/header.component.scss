@@ -21,6 +21,9 @@
     &:hover {
       background-color: rgba(53, 211, 211, 0.507);
     }
+    &:focus {
+      border: none !important;
+    }
   }
   .list {
     li{

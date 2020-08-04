@@ -12,9 +12,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  getToken() {
-    return this.token;
-  }
+  // getToken() {
+  //   return this.token;
+  // }
 
   createUser(email: string, password: string) {
     const auth: Auth = { email: email, password: password };

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { PostCreateComponent } from '../posts/post-create/post-create.component';
+import {Router} from '@angular/router';
 import {PostsService} from '../posts/posts.service';
 import { Subscription } from 'rxjs'
 import {Post} from '../posts/post.model';
@@ -16,7 +17,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     public postsService: PostsService,
-     public dialog: MatDialog) { }
+    public router: Router,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.postsService.getPosts();
@@ -27,5 +29,8 @@ export class HeaderComponent implements OnInit {
   }
   openDialog (): void {
     this.dialog.open(PostCreateComponent);
+  }
+  onLogout() {
+    this.router.navigate(['/login']);
   }
 }

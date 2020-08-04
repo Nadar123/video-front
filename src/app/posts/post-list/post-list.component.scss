@@ -23,6 +23,9 @@
         cursor: pointer;
         font-size: 18px;
         transition: color 0.2s ease-in-out;
+        border: none;
+        background: white;
+        transition: background-color 0.2s ease-in-out;
     
         &:hover {
           color: red
@@ -38,6 +41,9 @@
     }
     &:hover {
       background-color: rgba(209, 241, 230, 0.507);
+      .delete-icon {
+        background-color: rgba(209, 241, 230, 0.507);
+      }
     }
   }
 }

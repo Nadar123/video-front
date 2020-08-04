@@ -30,8 +30,9 @@ export class PostCreateComponent implements OnInit {
       return;
     }
     this.postsService.addPost(
+      form.value.id,
       form.value.title, 
-      form.value.content, 
+      form.value.category, 
       form.value.img,
       form.value.imdb 
       );
@@ -39,10 +40,8 @@ export class PostCreateComponent implements OnInit {
     this.dialog.closeAll();
 
   }
+
   close() {
     this.dialog.closeAll();
-}
-  // onNoClick(): void {
-  //   this.dialogRef.close();
-  // }
+  }
 }

@@ -38,9 +38,9 @@
     <mat-form-field>
       <mat-label> Catgorey </mat-label>
       <mat-select 
-      name="content"
+      name="category"
       ngModel
-      #content="ngModel"
+      #category="ngModel"
       required
       minlength="3"
       maxlength="30"
@@ -50,8 +50,8 @@
         [value]="catagory.value"> {{catagory.viewValue}}</mat-option>
      
       </mat-select>
-      <mat-error *ngIf="content.invalid">
-        Please enter a post content
+      <mat-error *ngIf="category.invalid">
+        Please enter a post category
       </mat-error>
     </mat-form-field>
     <mat-form-field>
@@ -65,7 +65,7 @@
         minlength="3"
         maxlength="30"  
       > 
-      <mat-error *ngIf="content.invalid">
+      <mat-error *ngIf="category.invalid">
         Please enter a imdb link
       </mat-error>
 

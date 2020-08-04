@@ -5,7 +5,7 @@
   </div>
   <button class="addMovie" (click)="openDialog()">Add Movie</button>
   <ul class="list">
-    <li *ngFor="let post of posts">
+    <li *ngFor="let post of posts | distinct">
       {{ post.category }}
     </li>
     <li><a hrouter-link="">Logout</a></li>

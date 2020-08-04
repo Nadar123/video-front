@@ -24,23 +24,8 @@ export class PostCreateComponent implements OnInit {
     this.catagoriesService.getCatagories().subscribe(res => {
       this.categories = res;
       this.isLoading = false;
-      debugger;
     })
   }
-
-  // ngOnInit(): void {
-  //   this.isLoading = true;
-  //   this.postsService.getPosts();
-  //   this.postSubscription = this.postsService.getPostUpdateListener()
-  //     .subscribe((posts: Post[]) => {
-  //       this.isLoading = false;
-  //       this.posts = posts;
-  //     });
-  // }
-  // .subscribe((posts: Post[]) => {
-  //   this.isLoading = false;
-  //   this.posts = posts;
-  // });
 
   onAddPost(form: NgForm) {
     this.isLoading = true;

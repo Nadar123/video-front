@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {PostCreateComponent} from './posts/post-create/post-create.component';
 import {PostListComponent} from './posts/post-list/post-list.component';
@@ -10,7 +10,7 @@ import { HeaderComponent} from './header/header.component';
 import {PostsService} from './posts/posts.service';
 import { LoginComponent } from './auth/login/login/login.component';
 import { SignupComponent } from './auth/signup/signup/signup.component';
-
+import {AuthInterceptor} from './auth/auth-interceptor';
 import {BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
@@ -22,6 +22,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field/';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SecureComponent } from './secure/secure.component';
+import { DistinctPipe } from './header/distinct.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SecureComponent } from './secure/secure.component';
     LoginComponent,
     SignupComponent,
     SecureComponent,
+    DistinctPipe,
   ],
   entryComponents: [
     // PostCreateComponent,
@@ -54,6 +56,7 @@ import { SecureComponent } from './secure/secure.component';
     MatProgressSpinnerModule
   ],
   providers: [
+    {provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi: true},
     PostsService
   ],
   bootstrap: [AppComponent]

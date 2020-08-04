@@ -21,6 +21,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field/';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SecureComponent } from './secure/secure.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     PostCreateComponent,
     LoginComponent,
     SignupComponent,
+    SecureComponent,
   ],
   entryComponents: [
     // PostCreateComponent,
